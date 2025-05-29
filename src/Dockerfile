@@ -23,17 +23,15 @@ ENV WEBPROXY_PASSWORD=""
 ENV WINDSCRIBE_FIREWALL="on"
 
 RUN \
- apt-get update && \
- apt-get install -y  && \
- apt-get install -y software-properties-common dirmngr apt-transport-https && \
- apt-key adv --no-tty --keyserver keyserver.ubuntu.com --recv-key FDC247B7 && \
- add-apt-repository ppa:deluge-team/stable && \
- add-apt-repository ppa:libtorrent.org/1.2-daily && \
- echo 'deb https://repo.windscribe.com/debian bionic main' | tee /etc/apt/sources.list.d/windscribe-repo.list && \
- apt-get update && \
- apt-get install -y \
-	python3 python3-pip windscribe-cli iptables-persistent deluged deluge-web deluge-console resolvconf- \
-	nano dnsutils iputils-ping lsof net-tools cron && \
+ apt update && \
+ apt install -y software-properties-common dirmngr apt-transport-https && \
+ apt update && \
+ apt install -y \
+	python3 python3-pip iptables-persistent deluged deluge-web deluge-console resolvconf- \
+	wget nano dnsutils iputils-ping lsof net-tools cron sudo procps pkexec policykit-1 iproute2 iw ethtool && \
+ wget 
+
+ 
  python3 -m pip install pexpect netifaces netaddr pyufw psutil && \
  echo "**** Install tinyproxy ****" && \
  apt-get install -y \
