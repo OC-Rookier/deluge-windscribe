@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
-LABEL maintainer="kabe0"
+LABEL maintainer="original: kabe0, current OC_Rr"
 
 # environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
